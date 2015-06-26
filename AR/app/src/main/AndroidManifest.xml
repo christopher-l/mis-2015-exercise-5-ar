@@ -120,6 +120,14 @@
  	        android:launchMode="singleTask"
             >
         </activity>
+
+        <activity
+            android:name=".app.ImageTargetsUni.ImageTargets"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
+            android:theme="@style/SampleAppsTheme"
+            android:launchMode="singleTask"
+            >
+        </activity>
         
         <activity
             android:name=".app.TextRecognition.TextReco"

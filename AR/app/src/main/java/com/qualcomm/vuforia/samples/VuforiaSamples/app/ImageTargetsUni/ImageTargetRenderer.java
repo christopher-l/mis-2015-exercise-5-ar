@@ -67,6 +67,8 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
     boolean mIsActive = false;
     
     private static final float OBJECT_SCALE_FLOAT = 3.0f;
+
+    private boolean mDirty = false;
     
     
     public ImageTargetRenderer(ImageTargets activity,
@@ -201,12 +203,24 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
             int textureIndex;
 
             if (trackable.getName().equalsIgnoreCase("cat")) {
-                textureIndex = 0;
-
+                textureIndex = 1;
+            } else if (trackable.getName().equalsIgnoreCase("city")) {
+                textureIndex = 2;
             } else {
                 textureIndex = 0;
             }
-//            mActivity.mWebDownloader.mWebView.invalidate();
+            synchronized (mActivity.mWebDownloader) {
+                if (!mActivity.mWebDownloader.ready(textureIndex)) {
+                    if (mActivity.mWebDownloader.setId(textureIndex)) {
+                        mActivity.mWebDownloader.notify();
+                        mDirty = true;
+                    }
+                    textureIndex = 0;
+                } else if (mDirty) {
+                    initRendering();
+                    mDirty = false;
+                }
+            }
             
             // deal with the modelview and projection matrices
             float[] modelViewProjection = new float[16];

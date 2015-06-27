@@ -121,7 +121,8 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
         mTextures = new Vector<Texture>();
         loadTextures();
 
-        mWebDownloader = new WebDownloader(this.getApplicationContext(), mTextures);
+        mWebDownloader = new WebDownloader(this, mTextures);
+        (new Thread(mWebDownloader)).start();
         
         mIsDroidDevice = android.os.Build.MODEL.toLowerCase().startsWith(
             "droid");

@@ -24,7 +24,7 @@ public class WebDownloader implements Runnable {
     public WebView mWebView;
     private Vector<Texture> mTextures;
     private final String URLS[] = {"",
-            "http://www.uni-weimar.de",
+            "https://www.uni-weimar.de/qisserver/rds?state=wplan&act=Raum&pool=Raum&P.subc=plan&raum.rgid=3218&idcol=raum.rgid&idval=3218&raum.dtxt=015&purge=n&getglobal=n&text=Bauhausstra%C3%9Fe+11+-+Seminarraum++015++%28Seminarraum%2F%C3%9Cbungsraum%29",
             "http://xkcd.com"
     };
     private int mCurrentId = -1;
@@ -35,7 +35,7 @@ public class WebDownloader implements Runnable {
     // Zooming in can improve font quality
     final double scale = 2.0;
     // Unfortunately, there is no method view.getContentWidth()
-    final int contentWidth = 240;
+    final int contentWidth = 800;
 
     public WebDownloader(Activity activity, Vector<Texture> textures) {
 

@@ -217,7 +217,17 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
                     }
                     textureIndex = 0;
                 } else if (mDirty) {
-                    initRendering();
+                    Texture t = mTextures.get(textureIndex);
+                    GLES20.glGenTextures(1, t.mTextureID, 0);
+                    GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, t.mTextureID[0]);
+                    GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,
+                            GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
+                    GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,
+                            GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
+                    GLES20.glTexImage2D(GLES20.GL_TEXTURE_2D, 0, GLES20.GL_RGBA,
+                            t.mWidth, t.mHeight, 0, GLES20.GL_RGBA,
+                            GLES20.GL_UNSIGNED_BYTE, t.mData);
+//                    initRendering();
                     mDirty = false;
                 }
             }

@@ -94,6 +94,8 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
     private AlertDialog mErrorDialog;
     
     boolean mIsDroidDevice = false;
+
+    public WebDownloader mWebDownloader;
     
     
     // Called when the activity first starts or the user navigates back to an
@@ -118,6 +120,8 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
         // Load any sample specific textures:
         mTextures = new Vector<Texture>();
         loadTextures();
+
+        mWebDownloader = new WebDownloader(this.getApplicationContext(), mTextures);
         
         mIsDroidDevice = android.os.Build.MODEL.toLowerCase().startsWith(
             "droid");
@@ -166,14 +170,10 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
     
     private void loadTextures()
     {
-        mTextures.add(Texture.loadTextureFromApk("TextureTeapotBrass.png",
-            getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("TextureTeapotBlue.png",
-            getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("TextureTeapotRed.png",
-            getAssets()));
-        mTextures.add(Texture.loadTextureFromApk("ImageTargets/Buildings.jpeg",
-            getAssets()));
+        for (int i=0; i<5; i++) {
+            mTextures.add(Texture.loadTextureFromApk("TextureTeapotBrass.png",
+                    getAssets()));
+        }
     }
     
     

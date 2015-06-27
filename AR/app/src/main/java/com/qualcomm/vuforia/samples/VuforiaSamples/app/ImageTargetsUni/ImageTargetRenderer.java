@@ -197,8 +197,16 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
             Matrix44F modelViewMatrix_Vuforia = Tool
                 .convertPose2GLMatrix(result.getPose());
             float[] modelViewMatrix = modelViewMatrix_Vuforia.getData();
-            
-            int textureIndex = 0;
+
+            int textureIndex;
+
+            if (trackable.getName().equalsIgnoreCase("cat")) {
+                textureIndex = 0;
+
+            } else {
+                textureIndex = 0;
+            }
+//            mActivity.mWebDownloader.mWebView.invalidate();
             
             // deal with the modelview and projection matrices
             float[] modelViewProjection = new float[16];

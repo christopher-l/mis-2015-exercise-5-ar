@@ -202,10 +202,16 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
 
             int textureIndex;
 
-            if (trackable.getName().equalsIgnoreCase("cat")) {
+            if (trackable.getName().equalsIgnoreCase("sr015")) {
                 textureIndex = 1;
-            } else if (trackable.getName().equalsIgnoreCase("city")) {
+            } else if (trackable.getName().equalsIgnoreCase("sr014")) {
                 textureIndex = 2;
+            } else if (trackable.getName().equalsIgnoreCase("sr013")) {
+                textureIndex = 3;
+            } else if (trackable.getName().equalsIgnoreCase("gfx")) {
+                textureIndex = 4;
+            } else if (trackable.getName().equalsIgnoreCase("webis")) {
+                textureIndex = 5;
             } else {
                 textureIndex = 0;
             }

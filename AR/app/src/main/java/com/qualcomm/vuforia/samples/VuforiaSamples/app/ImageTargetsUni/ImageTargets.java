@@ -109,7 +109,7 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
         vuforiaAppSession = new SampleApplicationSession(this);
         
         startLoadingAnimation();
-        mDatasetStrings.add("penis.xml");
+        mDatasetStrings.add("noteapot.xml");
         //mDatasetStrings.add("Tarmac.xml");
         
         vuforiaAppSession
@@ -171,8 +171,8 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
     
     private void loadTextures()
     {
-        for (int i=0; i<5; i++) {
-            mTextures.add(Texture.loadTextureFromApk("TextureTeapotBrass.png",
+        for (int i=0; i<6; i++) {
+            mTextures.add(Texture.loadTextureFromApk("loading.png",
                     getAssets()));
         }
     }

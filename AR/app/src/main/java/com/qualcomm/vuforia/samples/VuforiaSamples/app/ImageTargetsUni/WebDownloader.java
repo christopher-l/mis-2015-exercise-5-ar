@@ -25,10 +25,10 @@ public class WebDownloader implements Runnable {
     private Vector<Texture> mTextures;
     private final String URLS[] = {"",
             "https://www.uni-weimar.de/qisserver/rds?state=wplan&act=Raum&pool=Raum&P.subc=plan&raum.rgid=3218&idcol=raum.rgid&idval=3218&raum.dtxt=015&purge=n&getglobal=n&text=Bauhausstra%C3%9Fe+11+-+Seminarraum++015++%28Seminarraum%2F%C3%9Cbungsraum%29",
-            "https://www.uni-weimar.de/qisserver/rds?state=wplan&act=Raum&pool=Raum&show=plan&P.subc=plan&raum.dtxt=014",
-            "https://www.uni-weimar.de/qisserver/rds?state=wplan&act=Raum&pool=Raum&P.subc=plan&raum.rgid=3216&idcol=raum.rgid&idval=3216&raum.dtxt=013&purge=n&getglobal=n&text=Bauhausstra%C3%9Fe+11+-+Seminarraum++013++%28Seminarraum%2F%C3%9Cbungsraum%29",
+            "https://www.uni-weimar.de/qisserver/rds?state=wplan&act=Raum&pool=Raum&P.subc=plan&raum.rgid=2947&idcol=raum.rgid&idval=2947&raum.dtxt=it-ap&purge=n&getglobal=n&text=Karl-Hau%C3%9Fknecht-Stra%C3%9Fe+7+-+H%C3%B6rsaal+%28IT-AP%29++%28H%C3%B6rsaal%2C+eben%29",
             "https://www.uni-weimar.de/en/media/chairs/computer-graphics/",
-            "https://www.uni-weimar.de/en/media/chairs/webis/home/"
+            "https://www.uni-weimar.de/en/media/chairs/webis/home/",
+            "https://www.uni-weimar.de/qisserver/rds?state=wplan&act=Raum&pool=Raum&raum.rgid=2881"
     };
     private int mCurrentId = -1;
     private Activity mActivity;

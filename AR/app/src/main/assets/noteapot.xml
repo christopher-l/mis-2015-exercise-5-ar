@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="c" size="250.000000 333.333344" />
+    <ImageTarget name="hk7" size="250.000000 333.333344" />
     <ImageTarget name="webis" size="250.000000 187.500000" />
     <ImageTarget name="gfx" size="250.000000 187.500000" />
-    <ImageTarget name="sr013" size="250.000000 333.333344" />
-    <ImageTarget name="sr014" size="250.000000 333.333344" />
     <ImageTarget name="sr015" size="250.000000 333.333344" />
   </Tracking>
 </QCARConfig>
